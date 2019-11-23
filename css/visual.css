@@ -62,7 +62,7 @@ html, body, form{overflow-y:auto;height:100%;}
 .visual_box .visual_chart{height:calc(100% - 35px);}
 .visual_box .mainContent{text-align:center;}
 .visual_box .mainContent span{color:#01c0ff;font-size:30px;vertical-align: middle;
-    line-height: 150px;}
+    line-height: 120px;}
 
 .visual_left{width:25%;height:75%;float:left;}
 .visual_left .sfzcll{position:relative;}

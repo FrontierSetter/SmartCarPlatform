@@ -318,6 +318,19 @@
 	var myChart2 = echarts.init(document.getElementById('left2'));
 	myChart2.setOption(option2);
 
+	// 品牌实时热度
+	var myChart3 = echarts.init(document.getElementById('left3'));
+	myChart3.setOption(option3);
+	var zoomSize = 6;
+	myChart3.on('click', function (params) {
+		console.log(dataAxis3[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+		myChart3.dispatchAction({
+			type: 'dataZoom',
+			startValue: dataAxis3[Math.max(params.dataIndex - zoomSize / 2, 0)],
+			endValue: dataAxis3[Math.min(params.dataIndex + zoomSize / 2, data3.length - 1)]
+		});
+	});;
+
     //本月发生事件
 	// var myChart3 = echarts.init(document.getElementById('main3'));
     // myChart3.setOption(option3);
@@ -356,6 +369,7 @@
 	
 	window.onresize = function(){
 		myChart2.resize();
+		myChart3.resize();
 	}
 	</script>
 </body>

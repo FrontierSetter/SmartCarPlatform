@@ -35,6 +35,9 @@
 <!-- 热力图 -->
 <script src="js/heatMap.js"></script>
 
+<!-- 散点图 -->
+<script src="js/complaintScatter.js"></script>
+
 
 
 </head>
@@ -136,7 +139,7 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide swiper-no-swiping" id="heatMap"> </div>
 					<div class="swiper-slide" id="wordCloud"></div>
-					<div class="swiper-slide" id="complaintDistribute"></div>
+					<div class="swiper-slide" id="complaintScatter"></div>
 				</div>
 					
 				<div class="swiper-pagination"></div>
@@ -467,6 +470,10 @@
 	var myChartHeatMap = echarts.init(document.getElementById('heatMap'));
 	myChartHeatMap.setOption(optionHeatMap);
 
+	// 散点图
+	var myChartScatter = echarts.init(document.getElementById('complaintScatter'));
+	myChartScatter.setOption(optionComplaintScatter);
+
 
 	// 切换器
 	var mySwiper = new Swiper ('.swiper-container', {
@@ -540,6 +547,8 @@
 		myChart10.resize();
 		myChart13.resize();
 		myChartWordCloud.resize();
+		myChartHeatMap.resize();
+		myChartScatter.resize();
 	}
 	</script>
 </body>

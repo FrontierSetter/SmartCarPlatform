@@ -13,19 +13,33 @@ optionComplaintScatter = {
     // title: {
     //     text: '1990 与 2015 年各国家人均寿命与 GDP'
     // },
+    grid:{
+        top:0,
+        right:0,
+        left:0,
+        bottom:0
+    },
     xAxis: {
-        type : 'category',
-        boundaryGap : false,
-        data : ['一','二','三','四','五','六','日']
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        },
+        min:0,
+        max:100
     },
     yAxis: {
-        type : 'category',
-        boundaryGap : false,
-        data : ['一','二','三','四','五','六','日']
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        },
+        min:0,
+        max:100
     },
     series: [{
         name: '2015',
-        data: data[1],
+        data: dataComplaintScatter,
         type: 'scatter',
         symbolSize: function (data) {
             return Math.sqrt(data[2]) / 5e2;

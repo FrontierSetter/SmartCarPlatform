@@ -134,6 +134,6 @@ html, body, form{overflow-y:auto;height:100%;}
 .visual_smallBox .visual_title img{width:95%;position:absolute;left:0;bottom:0;}
 .visual_smallBox .visual_chart{height:calc(100%);text-align:center}
 
-#complaintDistribute{background:url('../images/car_trans.png') no-repeat center!important;background-size: 100% auto!important;}
+#complaintScatter{background:url('../images/car_trans.png') no-repeat center!important;background-size: 100% 70%!important;}
 
 

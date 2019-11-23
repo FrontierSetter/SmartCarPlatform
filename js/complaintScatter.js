@@ -1,5 +1,5 @@
 var dataComplaintScatter = [
-    
+    [20,25, 1307, '引擎']
 ]
 
 optionComplaintScatter = {
@@ -20,6 +20,7 @@ optionComplaintScatter = {
         bottom:0
     },
     xAxis: {
+        show:false,
         splitLine: {
             lineStyle: {
                 type: 'dashed'
@@ -29,6 +30,7 @@ optionComplaintScatter = {
         max:100
     },
     yAxis: {
+        show:false,
         splitLine: {
             lineStyle: {
                 type: 'dashed'
@@ -42,7 +44,7 @@ optionComplaintScatter = {
         data: dataComplaintScatter,
         type: 'scatter',
         symbolSize: function (data) {
-            return Math.sqrt(data[2]) / 5e2;
+            return Math.sqrt(data[2]);
         },
         label: {
             emphasis: {
@@ -50,6 +52,11 @@ optionComplaintScatter = {
                 formatter: function (param) {
                     return param.data[3];
                 },
+                textStyle: {
+                    fontSize: '15',
+                    fontWeight: 'bold'
+                },
+                color:'#63B8FF',
                 position: 'top'
             }
         },

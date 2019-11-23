@@ -8,7 +8,8 @@
 <!-- 新 Bootstrap 核心 CSS 文件 --> 
 <link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
-<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
 <script src="js/bootstrap.min.js"></script>
 <!--echarts JS-->
@@ -21,6 +22,12 @@
 <script src="js/china.js"></script>
 <script src="js/chartMap.js"></script>
 <link rel="stylesheet" type="text/css" href="css/visual.css">
+<!-- semantic UI -->
+<!-- <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/button.css" rel="stylesheet"> -->
+<link href="css/semantic.min.css" rel="stylesheet">
+<script src="js/semantic.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+
 
 </head>
 <body class="ksh">
@@ -140,8 +147,8 @@
 			</div>
 		</div>
 		<div class="visual_right">
-			<div class="visual_box">
-				<div class="visual_title" id="right1">
+			<div class="visual_box" style="height: 20%;">
+				<div class="visual_title" id="right1" >
 					<span></span>
 					<img src="images/ksh33.png">
 				</div>
@@ -154,45 +161,16 @@
 				</div>
 			-->
 			</div>
-			<div class="visual_box visualSfzsfl">
+			<div class="visual_box visualSfzsfl" style="height: 40%;">
 				<div class="visual_title">
-					<span>车辆投诉量走势</span>
+					<span>车型投诉量走势</span>
 					<img src="images/ksh33.png">
 				</div>
 				<div class="visual_chart" id="right2">
 					
 				</div>
-				<div class="visual_table">
-						<table>
-							<tr>
-								<td>小型车</td>
-								<td>中型车</td>
-								<td>大型车</td>
-							</tr>
-							<tr>
-								<td>2486万</td>
-								<td>2486万</td>
-								<td>2486万</td>
-							</tr>
-							<tr>
-								<td>2486万</td>
-								<td>2486万</td>
-								<td>2486万</td>
-							</tr>
-							<tr>
-								<td>2486万</td>
-								<td>2486万</td>
-								<td>2486万</td>
-							</tr>
-							<tr>
-								<td>2486万</td>
-								<td>2486万</td>
-								<td>2486万</td>
-							</tr>
-						</table>
-					</div>
 			</div>
-			<div class="visual_box">
+			<div class="visual_box" style="height: 40%;">
 				<div class="visual_title">
 					<span>2-12月百车故障数：</span>
 					<img src="images/ksh33.png">
@@ -214,7 +192,7 @@
 					<span>车型评分雷达图</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button1">
+				<div class="visual_chart" id="bottom1">
 						
 					
 				</div>
@@ -226,7 +204,7 @@
 					<img src="images/ksh33.png">
 					
 				</div>
-				<div class="visual_chart" id="button2">
+				<div class="visual_chart" id="bottom2">
 						
 					
 				</div>
@@ -236,7 +214,7 @@
 					<span>品牌车型销量占比</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button3">
+				<div class="visual_chart" id="bottom3">
 						
 					
 				</div>
@@ -246,7 +224,7 @@
 					<span>购车目的</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button4">
+				<div class="visual_chart" id="bottom4">
 						
 					
 				</div>
@@ -256,8 +234,56 @@
 					<span>车型正面高频词汇</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button5">
-						
+				<div id="bottom5" style="width:100%;height: 80%">
+					<div style="height: 20%; width: 100%; float: left;"></div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">紫罗兰</button>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">水鸭蓝</button>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">纯蓝</button>
+					</div>
+
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+
 					
 				</div>
 			</div>
@@ -266,8 +292,55 @@
 					<span>车型负面高频词汇</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button6">
-						
+				<div id="bottom6" style="width:100%;height: 80%">
+					<div style="height: 20%; width: 100%; float: left;"></div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">紫罗兰</button>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">水鸭蓝</button>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">纯蓝</button>
+					</div>
+
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0" style="margin-left:auto;margin-right:auto">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
+					<div style="height: 25%; width: 32%; float: left;">
+						<div class="ui animated button" tabindex="0">
+							<div class="visible content">测试</div>
+							<div class="hidden content">1</div>
+						</div>
+					</div>
 					
 				</div>
 			</div>
@@ -276,7 +349,7 @@
 					<span>3-5年百车故障分布</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="button7">
+				<div class="visual_chart" id="bottom7">
 						
 					
 				</div>
@@ -331,6 +404,34 @@
 		});
 	});;
 
+	// 车型投诉量走势
+	var myChart5 = echarts.init(document.getElementById('right2'));
+	myChart5.setOption(option5);
+
+	// 百车故障数
+	var myChart6 = echarts.init(document.getElementById('right3'));
+	myChart6.setOption(option6);
+
+	//车型评分雷达图
+	var myChart7 = echarts.init(document.getElementById('bottom1'));
+	myChart7.setOption(option7);
+
+	// 当月评论情感分析
+	var myChart8 = echarts.init(document.getElementById('bottom2'));
+	myChart8.setOption(option8);
+
+	//品牌车辆销售占比
+	var myChart9 = echarts.init(document.getElementById('bottom3'));
+	myChart9.setOption(option9);
+
+	// 购车目的
+	var myChart10 = echarts.init(document.getElementById('bottom4'));
+	myChart10.setOption(option10);
+
+	// 百车故障分析
+	var myChart13 = echarts.init(document.getElementById('bottom7'));
+	myChart13.setOption(option13);
+
     //本月发生事件
 	// var myChart3 = echarts.init(document.getElementById('main3'));
     // myChart3.setOption(option3);
@@ -370,6 +471,7 @@
 	window.onresize = function(){
 		myChart2.resize();
 		myChart3.resize();
+		myChart7.resize();
 	}
 	</script>
 </body>

@@ -126,8 +126,8 @@ mapFeatures.forEach(function(v) {
 // console.log("============geoCoordMap===================")
 // console.log(geoCoordMap)
 // console.log("================data======================")
-console.log(data)
-console.log(toolTipData)
+// console.log(data)
+// console.log(toolTipData)
 var max = 480,
     min = 9; // todo 
 var maxSize4Pin = 100,
@@ -230,6 +230,9 @@ var optionHeatMap = {
             // color: ['#00467F', '#A5CC82'] // 蓝绿
             // color: ['#00467F', '#A5CC82'] // 蓝绿
 
+        },
+        textStyle:{
+            color: '#999'
         }
     },
     /*工具按钮组*/

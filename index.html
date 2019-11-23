@@ -29,6 +29,13 @@
 <script src="js/semantic.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
 
+<!-- 词云 -->
+<script src="js/wordCloud.js"></script>
+
+<!-- 热力图 -->
+<script src="js/heatMap.js"></script>
+
+
 
 </head>
 <body class="ksh">
@@ -126,9 +133,9 @@
 
 			<div class="swiper-container visual_chart">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"></div>
-					<div class="swiper-slide"></div>
-					<div class="swiper-slide"></div>
+					<div class="swiper-slide" id="heatMap"> </div>
+					<div class="swiper-slide" id="wordCloud"></div>
+					<div class="swiper-slide" id="complaintDistribute"></div>
 				</div>
 					
 				<div class="swiper-pagination"></div>
@@ -446,23 +453,36 @@
 	var myChart13 = echarts.init(document.getElementById('bottom7'));
 	myChart13.setOption(option13);
 
+	// 词云
+	var myChartWordCloud = echarts.init(document.getElementById('wordCloud'));
+	maskImage.onload = function () {
+		// option.series[0].maskImage
+		myChartWordCloud.setOption(optionWordCloud);
+	}
+	maskImage.crossOrigin = '';
+	maskImage.src = './images/车剪影.png';
+
+	// 热力图
+	var myChartHeatMap = echarts.init(document.getElementById('heatMap'));
+	myChartHeatMap.setOption(optionHeatMap);
+
 
 	// 切换器
 	var mySwiper = new Swiper ('.swiper-container', {
 
-	autoplay: true,//自动滑动
-	speed:800,//滑动速度
- 	autoplay: {
-	 delay: 3000,
-	 disableOnInteraction: false,//点击交互后不失效
- 	  },
-    loop: true, 
-    // 如果需要分页器
-    pagination :{
-    el: '.swiper-pagination',
-    clickable :true,//允许点击
-  	}
-	  });
+		autoplay: false,//自动滑动
+		speed:800,//滑动速度
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,//点击交互后不失效
+		},
+		loop: true, 
+		// 如果需要分页器
+		pagination :{
+			el: '.swiper-pagination',
+			clickable :true,//允许点击
+		}
+	});
 
 	  
 
@@ -509,7 +529,15 @@
 	window.onresize = function(){
 		myChart2.resize();
 		myChart3.resize();
+		myChart5.resize();
+		myChart6.resize();
 		myChart7.resize();
+		myChart7.resize();
+		myChart8.resize();
+		myChart9.resize();
+		myChart10.resize();
+		myChart13.resize();
+		myChartWordCloud.resize();
 	}
 	</script>
 </body>

@@ -382,10 +382,15 @@ option8 = {
 
             label: {
                 normal: {
+                    show: false,
                     position: 'inner'
                 },
-                textStyle:{
-                    fontSize : 1
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '15',
+                        fontWeight: 'bold'
+                    }
                 }
             },
             labelLine: {

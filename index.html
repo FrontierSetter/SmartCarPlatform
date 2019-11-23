@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 <script src="js/swiper.min.js"></script>
 <!--界面样式-->
-<script src="js/visual.js"></script>
+<script src="js/chart.js"></script>
 <script src="js/china.js"></script>
 <script src="js/chartMap.js"></script>
 <link rel="stylesheet" type="text/css" href="css/visual.css">
@@ -36,88 +36,29 @@
 	</div>
 	<div class="visual">
 		<div class="visual_left">
-			<div class="visual_box">
-				<div class="mainContent">
+			<div class="visual_box" style="height: 20%;">
+				<div class="mainContent" id="left1">
 					<span>当前车型/品牌：迈腾</span>
 					
 				</div>
 				
 			</div>
-			<div class="visual_box">
+			<div class="visual_box" style="height:40%">
 				<div class="visual_title">
 					<span>车辆历史销量走势</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main2">
+				<div class="visual_chart" id="left2">
 					
 				</div>
 			</div>
-			<div class="visual_box">
+			<div class="visual_box" style="height:40%">
 				<div class="visual_title">
 					<span>品牌实时热度指数</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart sfzcll">
-					<a>运输方式</a>
-					<a>客运量</a>
-					<a>货运量</a>
-					<div class="sfzcll_pos_box">
-						<div class="sfzcll_box">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<label><img src="images/ksh35.png">公路运输</label>
-							<div class="sfzcll_smallBk">
-								<div class="ygl">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="sfzcll_smallBk">
-								<div class="ygh">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="sfzcll_box">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<label><img src="images/ksh35.png">公路运输</label>
-							<div class="sfzcll_smallBk">
-								<div class="ygl">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="sfzcll_smallBk">
-								<div class="ygh">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="sfzcll_box">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<img class="sfzcll_bkJk" src="images/ksh34.png">
-							<label><img src="images/ksh35.png">公路运输</label>
-							<div class="sfzcll_smallBk">
-								<div class="ygl">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="sfzcll_smallBk">
-								<div class="ygh">
-									<span>4347.2万</span>人
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					
+				<div class="visual_chart" id="left3">
+								
 				</div>
 			</div>
 		</div>
@@ -174,8 +115,8 @@
 					<h1>出行服务+大数据</h1>
 					<h2>车辆大数据分析平台</h2>
 				</div>
-				<div class="visual_chart" id="main8"></div>
-				<div class="visual_conBot_bot">
+				<div class="visual_chart" id="middleMap"></div>
+				<!-- <div class="visual_conBot_bot">
 					<div class="visualSssf_left">
 						<h3>今日实时收费</h3>
 						<a style="display:block">全省数据</a>
@@ -195,12 +136,12 @@
 						<div class="visualSssf_right_box" id="main7"></div>
 					</div>
 					<div class="clear"></div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="visual_right">
 			<div class="visual_box">
-				<div class="visual_title">
+				<div class="visual_title" id="right1">
 					<span></span>
 					<img src="images/ksh33.png">
 				</div>
@@ -218,7 +159,7 @@
 					<span>车辆投诉量走势</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main9">
+				<div class="visual_chart" id="right2">
 					
 				</div>
 				<div class="visual_table">
@@ -256,12 +197,15 @@
 					<span>2-12月百车故障数：</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="swiper-container visual_swiper2 visual_chart">
+				<div class="visual_chart" id="right3">
+
+				</div>
+				<!-- <div class="swiper-container visual_swiper2 visual_chart">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide"  id="main4"></div>
 						<div class="swiper-slide"  id="main41"></div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="visual_bottom">
@@ -270,7 +214,7 @@
 					<span>车型评分雷达图</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main3">
+				<div class="visual_chart" id="button1">
 						
 					
 				</div>
@@ -282,7 +226,7 @@
 					<img src="images/ksh33.png">
 					
 				</div>
-				<div class="visual_chart" id="main31">
+				<div class="visual_chart" id="button2">
 						
 					
 				</div>
@@ -292,11 +236,19 @@
 					<span>品牌车型销量占比</span>
 					<img src="images/ksh33.png">
 				</div>
+				<div class="visual_chart" id="button3">
+						
+					
+				</div>
 			</div>
 			<div class="visual_smallBox">
 				<div class="visual_title">
 					<span>购车目的</span>
 					<img src="images/ksh33.png">
+				</div>
+				<div class="visual_chart" id="button4">
+						
+					
 				</div>
 			</div>
 			<div class="visual_smallBox">
@@ -304,17 +256,29 @@
 					<span>车型正面高频词汇</span>
 					<img src="images/ksh33.png">
 				</div>
+				<div class="visual_chart" id="button5">
+						
+					
+				</div>
 			</div>
 			<div class="visual_smallBox">
 				<div class="visual_title">
 					<span>车型负面高频词汇</span>
 					<img src="images/ksh33.png">
 				</div>
+				<div class="visual_chart" id="button6">
+						
+					
+				</div>
 			</div>
 			<div class="visual_smallBox">
 				<div class="visual_title">
 					<span>3-5年百车故障分布</span>
 					<img src="images/ksh33.png">
+				</div>
+				<div class="visual_chart" id="button7">
+						
+					
 				</div>
 			</div>
 		</div>
@@ -348,45 +312,51 @@
 
 	//交通流量
 	//var myChart1 = echarts.init(document.getElementById('main1'));
-    //myChart1.setOption(option1);
-	//交通工具流量
-	var myChart2 = echarts.init(document.getElementById('main2'));
-    myChart2.setOption(option2);
+	//myChart1.setOption(option1);
+	
+	//车辆历史销量走势
+	var myChart2 = echarts.init(document.getElementById('left2'));
+	myChart2.setOption(option2);
+
     //本月发生事件
-	var myChart3 = echarts.init(document.getElementById('main3'));
-    myChart3.setOption(option3);
-    var myChart31 = echarts.init(document.getElementById('main31'));
-    myChart31.setOption(option31);
-    var mySwiper1 = new Swiper('.visual_swiper1', {
-		autoplay: true,//可选选项，自动滑动
-		speed:800,//可选选项，滑动速度
-		autoplay: {
-		    delay: 5000,//1秒切换一次
-		  },
-	})
-    //收费站收费排行
-	var myChart4 = echarts.init(document.getElementById('main4'));
-    myChart4.setOption(option4);
-    var myChart41 = echarts.init(document.getElementById('main41'));
-    myChart41.setOption(option41);
-    var mySwiper2 = new Swiper('.visual_swiper2', {
-		autoplay: true,//可选选项，自动滑动
-		direction : 'vertical',//可选选项，滑动方向
-		speed:2000,//可选选项，滑动速度
-	})
-    //今日实时收费
-	var myChart5 = echarts.init(document.getElementById('main5'));
-    myChart5.setOption(option5);
-    var myChart6 = echarts.init(document.getElementById('main6'));
-    myChart6.setOption(option6);
-    var myChart7 = echarts.init(document.getElementById('main7'));
-    myChart7.setOption(option7);
-    //中间地图
-	var myChart8 = echarts.init(document.getElementById('main8'));
-    myChart8.setOption(option8);
-    //收费站收费量
-	var myChart9 = echarts.init(document.getElementById('main9'));
-    myChart9.setOption(option9);
+	// var myChart3 = echarts.init(document.getElementById('main3'));
+    // myChart3.setOption(option3);
+    // var myChart31 = echarts.init(document.getElementById('main31'));
+    // myChart31.setOption(option31);
+    // var mySwiper1 = new Swiper('.visual_swiper1', {
+	// 	autoplay: true,//可选选项，自动滑动
+	// 	speed:800,//可选选项，滑动速度
+	// 	autoplay: {
+	// 	    delay: 5000,//1秒切换一次
+	// 	  },
+	// })
+    // //收费站收费排行
+	// var myChart4 = echarts.init(document.getElementById('main4'));
+    // myChart4.setOption(option4);
+    // var myChart41 = echarts.init(document.getElementById('main41'));
+    // myChart41.setOption(option41);
+    // var mySwiper2 = new Swiper('.visual_swiper2', {
+	// 	autoplay: true,//可选选项，自动滑动
+	// 	direction : 'vertical',//可选选项，滑动方向
+	// 	speed:2000,//可选选项，滑动速度
+	// })
+    // //今日实时收费
+	// var myChart5 = echarts.init(document.getElementById('main5'));
+    // myChart5.setOption(option5);
+    // var myChart6 = echarts.init(document.getElementById('main6'));
+    // myChart6.setOption(option6);
+    // var myChart7 = echarts.init(document.getElementById('main7'));
+    // myChart7.setOption(option7);
+    // //中间地图
+	// var myChart8 = echarts.init(document.getElementById('main8'));
+    // myChart8.setOption(option8);
+    // //收费站收费量
+	// var myChart9 = echarts.init(document.getElementById('main9'));
+	// myChart9.setOption(option9);
+	
+	window.onresize = function(){
+		myChart2.resize();
+	}
 	</script>
 </body>
 </html>

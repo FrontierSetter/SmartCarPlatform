@@ -344,7 +344,12 @@ var keywords = {
             };
 
 var dataWordCloud = [];
+var minWordCloud = 99999;
+var maxWordCloud = 0;
 for (var name in keywords) {
+    var tem = Math.sqrt(keywords[name]);
+    if(tem > maxWordCloud) maxWordCloud = tem;
+    if(tem < minWordCloud) minWordCloud = tem;
     dataWordCloud.push({
         name: name,
         value: Math.sqrt(keywords[name])
@@ -361,6 +366,15 @@ var optionWordCloud = {
         },
         // backgroundColor: "#ff7f50",//提示标签背景颜色
         // textStyle: { color: "#fff" } //提示标签字体颜色
+    },
+
+    visualMap: {
+        show: false,
+        min: minWordCloud,
+        max: maxWordCloud*1.1,
+        inRange: {
+            colorLightness: [0.25, 0.9]
+        }
     },
 
     series: [{
@@ -383,8 +397,8 @@ var optionWordCloud = {
 
         left: 'center',
         top: 'center',
-        width: '70%',
-        height: '80%',
+        width: '100%',
+        height: '90%',
         right: null,
         bottom: null,
 

@@ -51,10 +51,10 @@ optionComplaintScatter = {
             emphasis: {
                 show: true,
                 formatter: function (param) {
-                    return param.data[3];
+                    return param.data[3]+': '+param.data[2]+'起';
                 },
                 textStyle: {
-                    fontSize: '15',
+                    fontSize: '25',
                     fontWeight: 'bold'
                 },
                 color:'#63B8FF',

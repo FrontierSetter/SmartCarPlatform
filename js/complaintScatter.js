@@ -3,6 +3,7 @@ var dataComplaintScatter = [
 ]
 
 optionComplaintScatter = {
+    color: ["#37A2DA"],
     // backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
     //     offset: 0,
     //     color: '#f7f8fa'

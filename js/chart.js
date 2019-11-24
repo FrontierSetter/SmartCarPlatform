@@ -360,6 +360,10 @@ option7 = {
 // 当月评论情感分析
 
 option8 = {
+    // color: ["#0B61A4", "#1240AB", "#2A4480", "#009999", "#033E6B", "#06266F", "#006363", "#3F92D2", "#4671D5", "#33CCCC"],
+    // color: ['#9cd4d8', '#bce0e5', '#bcd6e5', '#cae4f4', '#bcdaf2', '#bfe3ff', '#b0d5ff', '#a4c7f0', '#aec9fe', '#a0b9ec'],
+    color: ['#009ad6', '#76becc', '#2468a2', '#2585a6', '#33a3dc', '#7bbfea', '#78cdd1', '#00a6ac', '#008792', '#afdfe4'],
+
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -486,6 +490,7 @@ option8 = {
 
 // 品牌车辆销售占比
 option9 = {
+    color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
 
     // title: {
     //     text: 'Customized Pie',
@@ -578,6 +583,7 @@ option10 = {
     // grid:{
     //     top:'1%',
     // },
+    color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
     tooltip : {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
@@ -632,6 +638,7 @@ option10 = {
 
 // 百车故障分析
 option13 = {
+    color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"

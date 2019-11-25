@@ -35,6 +35,7 @@ option2 = {
             animation: false
         }
     },
+    
     xAxis: {
         type: 'time',
         splitLine: {
@@ -63,7 +64,8 @@ option2 = {
         type: 'line',
         showSymbol: false,
         hoverAnimation: false,
-        data: data2
+        data: data2,
+       
     }]
 };
 //////////////////////车型历史销量走势 end
@@ -224,7 +226,22 @@ option5 = {
     series: {
         type: 'line',
         showSymbol: false,
-        data: valueList
+        data: valueList,
+        markPoint: {
+            label: {
+                normal: {
+                    textStyle: {
+                        color: 'white'
+                    }
+                }
+            },
+            data: [
+            {
+                type: 'max',
+                name: '最大值',
+    
+            }]
+        },
     }
 };
 /////////////车型投诉量走势
@@ -249,7 +266,7 @@ option6 = {
     xAxis : [
         {
             type : 'category',
-            data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            data : ['引擎', '内饰', '车门', '玻璃', '悬挂器', '点火装置', '车轱辘'],
             axisTick: {
                 alignWithLabel: true
             },
@@ -258,6 +275,9 @@ option6 = {
                     color: '#999'
                 }
             },
+            axisLabel:{
+                interval:0
+            }
         }
     ],
     yAxis : [
@@ -272,7 +292,7 @@ option6 = {
     ],
     series : [
         {
-            name:'直接访问',
+            name:'百车故障数',
             type:'bar',
             barWidth: '60%',
             data:[10, 52, 200, 334, 390, 330, 220]
@@ -372,14 +392,14 @@ option8 = {
         type: 'scroll',
         orient: 'horizontal',
         x: 'left',
-        data:['直达','营销广告','搜索引擎','邮件营销','联盟广告','视频广告','百度','谷歌','必应','其他'],
+        data:['好','中','差','1','2','3','4','5','6','7'],
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
     },
     series: [
         {
-            name:'访问来源',
+            name:'评论情感',
             type:'pie',
             selectedMode: 'single',
             radius: [0, '30%'],
@@ -403,13 +423,13 @@ option8 = {
                 }
             },
             data:[
-                {value:335, name:'直达', selected:true},
-                {value:679, name:'营销广告'},
-                {value:1548, name:'搜索引擎'}
+                {value:335, name:'好', selected:true},
+                {value:679, name:'中'},
+                {value:1548, name:'差'}
             ]
         },
         {
-            name:'访问来源',
+            name:'评论情感',
             type:'pie',
             radius: ['40%', '55%'],
             lanel:{
@@ -473,14 +493,14 @@ option8 = {
             //     }
             // },
             data:[
-                {value:335, name:'直达'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1048, name:'百度'},
-                {value:251, name:'谷歌'},
-                {value:147, name:'必应'},
-                {value:102, name:'其他'}
+                {value:335, name:'好'},
+                {value:310, name:'1'},
+                {value:234, name:'2'},
+                {value:135, name:'3'},
+                {value:1048, name:'4'},
+                {value:251, name:'5'},
+                {value:147, name:'6'},
+                {value:102, name:'7'}
             ]
         }
     ]
@@ -519,23 +539,23 @@ option9 = {
         orient: 'horizontal',
         // orient: 'vertical',
         left: 'left',
-        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+        data: ['宝马','奥迪','大众','五菱','奔驰'],
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
     },
     series : [
         {
-            name:'访问来源',
+            name:'品牌',
             type:'pie',
             radius : '55%',
             center: ['50%', '50%'],
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:274, name:'联盟广告'},
-                {value:235, name:'视频广告'},
-                {value:400, name:'搜索引擎'}
+                {value:335, name:'宝马'},
+                {value:310, name:'奥迪'},
+                {value:274, name:'大众'},
+                {value:235, name:'五菱'},
+                {value:400, name:'奔驰'}
             ].sort(function (a, b) { return a.value - b.value; }),
             roseType: 'radius',
             label: {
@@ -593,14 +613,14 @@ option10 = {
         orient: 'horizontal',
         // orient: 'vertical',
         left: 'left',
-        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+        data: ['代步','政府采购','炫耀','单纯想花钱','老婆喜欢'],
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
     },
     series : [
         {
-            name: '访问来源',
+            name: '购车目的',
             type: 'pie',
             radius : '55%',
             center: ['50%', '50%'],
@@ -618,11 +638,11 @@ option10 = {
                 }
             },
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1548, name:'搜索引擎'}
+                {value:335, name:'炫耀'},
+                {value:310, name:'老婆喜欢'},
+                {value:234, name:'单纯想花钱'},
+                {value:135, name:'政府采购'},
+                {value:1548, name:'代步'}
             ],
             itemStyle: {
                 emphasis: {
@@ -647,14 +667,14 @@ option13 = {
         type: 'scroll',
         orient: 'horizontal',
         x: 'left',
-        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+        data:['引擎','内饰','车门','玻璃','点火装置'],
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
     },
     series: [
         {
-            name:'访问来源',
+            name:'故障分析',
             type:'pie',
             radius: ['40%', '60%'],
             avoidLabelOverlap: false,
@@ -677,11 +697,11 @@ option13 = {
                 }
             },
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1548, name:'搜索引擎'}
+                {value:335, name:'引擎'},
+                {value:310, name:'内饰'},
+                {value:234, name:'车门'},
+                {value:135, name:'玻璃'},
+                {value:1548, name:'点火装置'}
             ]
         }
     ]

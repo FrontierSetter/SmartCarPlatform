@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
 <!-- <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
 <script src="js/bootstrap.min.js"></script>
 <!--echarts JS-->
@@ -44,6 +45,10 @@
 
 <!-- 散点图 -->
 <script src="js/complaintScatter.js"></script>
+
+<!-- 动态数字变化 -->
+<!-- <script src="https://cdn.bootcss.com/jquery-animateNumber/0.0.14/jquery.animateNumber.js"></script> -->
+<!-- <script type="text/javascript" src="./dist/script/numberAnimate.js"></script> -->
 
 
 
@@ -305,10 +310,13 @@
 					<span></span>
 					<img src="images/ksh33.png">
 				</div>
+				<!-- <div class="numberRun">
+					0
+				</div> -->
 				<div class="ui two statistics">
 					<div class="blue statistic" >
-						<div class="value">
-							82000
+						<div class="value" id="salenumber">
+							0
 						</div>
 						<div class="label" >
 							<font size="3" color="skyblue">累计销量</font>
@@ -399,32 +407,32 @@
 				</div>
 				<div id="bottom5" style="width:100%;height: 80%">
 					<div style="height: 20%; width: 100%; float: left;"></div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">宽&#12288敞</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted violet button">宽&#12288敞</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">舒&#12288适</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">舒&#12288适</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">避&#12288震</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">避&#12288震</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-						<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">油耗低</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+						<button class="ui fluid inverted violet button">油耗低</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">加速快</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">加速快</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">耐&#12288脏</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">耐&#12288脏</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-						<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">耐&#12288撞</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+						<button class="ui fluid inverted violet button">耐&#12288撞</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">便&#12288宜</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">便&#12288宜</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">售后好</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">售后好</button>
 					</div>
 
 				
@@ -437,33 +445,33 @@
 					<img src="images/ksh33.png">
 				</div>
 				<div id="bottom6" style="width:100%;height: 80%">
-					<div style="height: 20%; width: 100%; float: left;"></div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">&#12288贵&#12288</button>
+					<div style="height: 20%; width: 100%; float: left; padding-left: 1px; padding-right: 1px;"></div>
+					<div style="height: 25%; width: 32%; float: left; ">
+							<button class="ui fluid inverted violet button">&#12288贵&#12288</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">噪音大</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">噪音大</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">容易坏</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">容易坏</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-						<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">空间小</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+						<button class="ui fluid inverted violet button">空间小</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">油耗高</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">油耗高</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">不舒服</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">不舒服</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-						<button class="ui inverted violet button" style="margin-left:auto;margin-right:auto">外形丑</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+						<button class="ui fluid inverted violet button">外形丑</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto">&#12288&#12288&#12288</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted teal button">&#12288&#12288&#12288</button>
 					</div>
-					<div style="height: 25%; width: 32%; float: left;">
-							<button class="ui inverted blue button" style="margin-left:auto;margin-right:auto">&#12288&#12288&#12288</button>
+					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
+							<button class="ui fluid inverted blue button">&#12288&#12288&#12288</button>
 					</div>
 
 			
@@ -509,13 +517,14 @@
     		,1100);
 		})
 
-	// 启动左上角下拉菜单
-	// $('.ui.dropdown').dropdown();
+	// 左上角下拉菜单
 	function gotoCarSelectionPage(){
 		console.log('clicked');
 		// document.getElementById("brand").style.top="-100px";
 		document.getElementById("left1").style.display="none";
 		document.getElementById("page1").style.display="";
+		// document.getElementById("left1").animate({display:"none"});
+		// document.getElementById("page1").animate({display:""});
 		
 	}
 
@@ -526,6 +535,17 @@
 		document.getElementById("left1").style.display="";
 		
 	}
+
+
+	// 右上角数字
+	var nums = 10231;
+	setInterval(function(){
+		nums += 1;
+		document.getElementById("salenumber").innerHTML=nums;
+		console.log(""+nums);
+	}, 2000)
+
+
 
 	//交通流量
 	//var myChart1 = echarts.init(document.getElementById('main1'));

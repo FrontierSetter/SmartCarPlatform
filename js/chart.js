@@ -20,6 +20,7 @@ for (var i = 0; i < 1000; i++) {
     data2.push(randomData2());
 }
 
+
 option2 = {
     // title: {
     //     text: '动态数据 + 时间坐标轴'

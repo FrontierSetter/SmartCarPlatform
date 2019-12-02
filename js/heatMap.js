@@ -76,9 +76,8 @@ var data = [
     {name:"海南",value:14},
     {name:"台湾",value:0},
     {name:"香港",value:0},
-    {name:"南海诸岛",value:0},
     {name:"澳门",value:0},
-
+    {name:"南海诸岛",value:0}
     ];
     
 var geoCoordMap = {};

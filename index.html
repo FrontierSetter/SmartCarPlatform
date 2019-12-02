@@ -25,9 +25,15 @@
 <link rel="stylesheet" type="text/css" href="css/visual.css">
 <!-- semantic UI -->
 <!-- <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/button.css" rel="stylesheet"> -->
-<link href="css/semantic.min.css" rel="stylesheet">
-<script src="js/semantic.min.js"></script>
+<!-- <link href="css/semantic.min.css" rel="stylesheet">
+<script src="js/semantic.min.js"></script> -->
+<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.js"></script>
 <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/statistic.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/icon.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/dropdown.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/dropdown.js"></script>
+<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/menu.css" rel="stylesheet">
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
 
 <!-- 词云 -->
@@ -55,12 +61,130 @@
 	</div>
 	<div class="visual">
 		<div class="visual_left">
-			<div class="visual_box" style="height: 20%;">
-				<div class="mainContent" id="left1">
-					<span>当前车型/品牌：迈腾</span>
-					
+			<div class="visual_box" id="brand" style="height: 20%;">
+				<div class="mainContent" id="left1" style="height: 100%; width: 100%; float: left;">
+					<span>
+						当前车型/品牌：<a href="javascript:void(0)" onclick="gotoCarSelectionPage()">迈腾</a>
+					</span>	
 				</div>
-				
+
+				<div id="page1" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui active fluid inverted blue button">迈腾</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型2</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型3</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型4</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型5</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型6</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型7</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型8</button>
+					</div>
+					
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型9</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型10</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型11</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型12</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型13</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型14</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型15</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型16</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型17</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型18</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型19</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型20</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+						<button class="ui fluid inverted blue button">车型21</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型22</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型23</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型24</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型25</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型26</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型27</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型28</button>
+					</div>
+
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型29</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button">车型30</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui disabled fluid inverted blue button">车型31</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui disabled fluid inverted blue button">车型32</button>
+					</div>
+					<!-- <div style="height: 33%; width: 25%; float: left;  text-align:center">
+							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto;">
+								
+								<i class="angle down icon"></i>下一页
+							</button>
+					</div> -->
+				</div>
 			</div>
 			<div class="visual_box" style="height:40%">
 				<div class="visual_title">
@@ -384,6 +508,24 @@
     		}
     		,1100);
 		})
+
+	// 启动左上角下拉菜单
+	// $('.ui.dropdown').dropdown();
+	function gotoCarSelectionPage(){
+		console.log('clicked');
+		// document.getElementById("brand").style.top="-100px";
+		document.getElementById("left1").style.display="none";
+		document.getElementById("page1").style.display="";
+		
+	}
+
+	function gotoLeft1(){
+		console.log('clicked2');
+		// document.getElementById("brand").style.top="-100px";
+		document.getElementById("page1").style.display="none";
+		document.getElementById("left1").style.display="";
+		
+	}
 
 	//交通流量
 	//var myChart1 = echarts.init(document.getElementById('main1'));

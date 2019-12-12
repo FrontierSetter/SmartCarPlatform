@@ -672,8 +672,12 @@ option8 = {
 
 /////////////////////当月评论情感分析
 
-// 品牌车辆销售占比
-option9 = {
+data13 = [];
+cate13 = [];
+
+
+// 故障
+option13 = {
     color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
 
     // title: {
@@ -684,18 +688,25 @@ option9 = {
     //         color: '#ccc'
     //     }
     // },
+    // grid: {
+    //     top: '2%',
+    //     left: '3%',
+    //     right: '4%',
+    //     bottom: '8%',
+    //     containLabel: true
+    // },
 
     tooltip : {
         trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+        formatter: "{b} : {c} ({d}%)"
     },
 
     visualMap: {
         show: false,
-        min: 80,
-        max: 600,
+        min: 0,
+        max: 30,
         inRange: {
-            colorLightness: [0, 1]
+            colorLightness: [0.25, 1]
         }
     },
     legend: {
@@ -703,7 +714,7 @@ option9 = {
         orient: 'horizontal',
         // orient: 'vertical',
         left: 'left',
-        data: ['宝马','奥迪','大众','五菱','奔驰'],
+        data: cate13,
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
@@ -714,13 +725,7 @@ option9 = {
             type:'pie',
             radius : '55%',
             center: ['50%', '50%'],
-            data:[
-                {value:335, name:'宝马'},
-                {value:310, name:'奥迪'},
-                {value:274, name:'大众'},
-                {value:235, name:'五菱'},
-                {value:400, name:'奔驰'}
-            ].sort(function (a, b) { return a.value - b.value; }),
+            data: data13,
             roseType: 'radius',
             label: {
                 normal: {
@@ -819,9 +824,19 @@ option10 = {
     ]
 };
 //////////////////// 购车目的
-
-// 百车故障分析
-option13 = {
+cate9 = ['车身外观', '行驶', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统'];
+data9 = [
+    {value:1, name:'车身外观'},
+    {value:1, name:'行驶'},
+    {value:1, name:'功能操作'},
+    {value:1, name:'电子设备'},
+    {value:1, name:'座椅'},
+    {value:1, name:'空调系统'},
+    {value:1, name:'内饰'},
+    {value:1, name:'动力系统'},
+];
+// 销售占比
+option9 = {
     color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
     tooltip: {
         trigger: 'item',
@@ -831,7 +846,7 @@ option13 = {
         type: 'scroll',
         orient: 'horizontal',
         x: 'left',
-        data:['车身外观', '行驶', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统'],
+        data:cate9,
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
@@ -840,7 +855,7 @@ option13 = {
         {
             name:'故障分析',
             type:'pie',
-            radius: ['40%', '60%'],
+            radius: ['30%', '60%'],
             avoidLabelOverlap: false,
             label: {
                 normal: {
@@ -860,16 +875,7 @@ option13 = {
                     show: false
                 }
             },
-            data:[
-                {value:1, name:'车身外观'},
-                {value:1, name:'行驶'},
-                {value:1, name:'功能操作'},
-                {value:1, name:'电子设备'},
-                {value:1, name:'座椅'},
-                {value:1, name:'空调系统'},
-                {value:1, name:'内饰'},
-                {value:1, name:'动力系统'},
-            ]
+            data:data9,
         }
     ]
 };

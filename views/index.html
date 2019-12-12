@@ -719,7 +719,58 @@
 		queryImpression();
 		querySales();
 		querySalesHistory();
+		querySalesPart();
 	}
+
+	function querySalesPart(){
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/allbrandsales', //请求的url
+            type: 'get', //请求的方式
+            data: 'year=2019&month=10',
+            error: function (data) {
+                console.log('querySalesPart请求失败');
+            },
+            success: function (data) {
+				console.log(data);
+
+				data9 = new Array();
+				cate9 = new Array();
+
+				var other = 0;
+				
+				if(data != undefined){
+					for(var i = 0; i < data.length && i < 15; ++i){
+						cate9.push(data[i]['brand']);
+						data9.push({
+							value:data[i]['salesSUM'],
+							name:data[i]['brand'],
+						});
+					}
+
+					for(var i = 15; i < data.length; ++i){
+						other += data[i]['salesSUM'];
+					}
+
+					cate9.push('其他');
+					data9.push({
+						value:other,
+						name:'其他',
+					});
+
+					console.log(data9);
+					console.log(cate9);
+
+					myChart9.setOption({
+						legend:{data: cate9},
+						series:[{data: data9}],
+					})
+				}
+
+				
+            }
+            
+        });
+	} 
 
 	function querySalesHistory(){
 		$.ajax({
@@ -789,7 +840,20 @@
                 console.log('queryRadar请求失败');
             },
             success: function (data) {
+				if(data.length == 0){
+					myChart6.setOption({
+                    series: [{
+							data: new Array(),
+						}]
+					});
 
+					myChart13.setOption({
+						series: [{
+							data: new Array(),
+						}]
+					});
+					return;
+				}
 				var failure_2_12 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 				failure_2_12_JSON = JSON.parse(data[0]["fault_pp_2_12"])
 
@@ -815,7 +879,7 @@
 
 				myChart13.setOption({
                     series: [{
-                        data: fault_pp_3_5
+                        data: fault_pp_3_5.sort(function (a, b) { return a.value - b.value; }),
                     }]
 				});
 				// console.log(curScore)

@@ -267,7 +267,7 @@ option6 = {
     xAxis : [
         {
             type : 'category',
-            data : ['引擎', '内饰', '车门', '玻璃', '悬挂器', '点火装置', '车轱辘'],
+            data : ['车身外观', '行驶过程', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统', '变速系统'],
             axisTick: {
                 alignWithLabel: true
             },
@@ -296,7 +296,7 @@ option6 = {
             name:'百车故障数',
             type:'bar',
             barWidth: '60%',
-            data:[10, 52, 200, 334, 390, 330, 220]
+            data:[0, 0, 0, 0, 0, 0, 0, 0, 0]
         }
     ]
 };
@@ -670,7 +670,7 @@ option13 = {
         type: 'scroll',
         orient: 'horizontal',
         x: 'left',
-        data:['引擎','内饰','车门','玻璃','点火装置'],
+        data:['车身外观', '行驶', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统'],
         textStyle:{//图例文字的样式
             color:'#63B8FF',
         }
@@ -700,11 +700,14 @@ option13 = {
                 }
             },
             data:[
-                {value:335, name:'引擎'},
-                {value:310, name:'内饰'},
-                {value:234, name:'车门'},
-                {value:135, name:'玻璃'},
-                {value:1548, name:'点火装置'}
+                {value:1, name:'车身外观'},
+                {value:1, name:'行驶'},
+                {value:1, name:'功能操作'},
+                {value:1, name:'电子设备'},
+                {value:1, name:'座椅'},
+                {value:1, name:'空调系统'},
+                {value:1, name:'内饰'},
+                {value:1, name:'动力系统'},
             ]
         }
     ]

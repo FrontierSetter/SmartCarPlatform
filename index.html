@@ -647,8 +647,8 @@
 
 	// 左上角下拉菜单
 
-	var curBrand = "大众"
-	var curModel = "迈腾"
+	var curBrand = "奥迪"
+	var curModel = "奥迪A4L"
 	var brandList = ["日产", "大众", "丰田", "本田", "吉利汽车", "别克", "奥迪", "大众", "雪佛兰", "奔驰", "现代", "宝马", "马自达"]
 	var defaultModel = {
 		"日产": "轩逸", 
@@ -713,6 +713,7 @@
 	function queryModel(){
 		// 请求雷达图
 		queryRadar()
+		queryFault()
 	}
 
 	var radar_idx2name = ["appearance","interior","space","configure","power","operation","oil_consumption","comfort"]
@@ -727,7 +728,7 @@
             },
             success: function (data) {
 				var curScore = [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
-				for(var i = 0; i < 8; ++i){
+				for(var i = 0; i < curScore.length; ++i){
 					curScore[i] = data[0][radar_idx2name[i]]
 				}
 				console.log(curScore)
@@ -741,12 +742,64 @@
 	}
 
 
+	var right3_idx2name = ['车身外观', '行驶过程', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统', '变速系统']
+	var botton7_idx2name = ['车身外观', '行驶', '功能操作', '电子设备', '座椅', '空调系统', '内饰', '动力系统']
+	// 百车故障数
+	function queryFault(){
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/FaultDist', //请求的url
+            type: 'get', //请求的方式
+            data: 'model='+curModel,
+            error: function (data) {
+                console.log('queryRadar请求失败');
+            },
+            success: function (data) {
+
+				var failure_2_12 = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+				failure_2_12_JSON = JSON.parse(data[0]["fault_pp_2_12"])
+
+				for(var i = 0; i < right3_idx2name.length; ++i){
+					failure_2_12[i] = failure_2_12_JSON[right3_idx2name[i]]
+				}
+
+				myChart6.setOption({
+                    series: [{
+                        data: failure_2_12
+                    }]
+				});
+				
+				var fault_pp_3_5 = []
+				fault_pp_3_5_JSON = JSON.parse(data[0]["fault_pp_3_5"])
+
+				for(var i = 0; i < botton7_idx2name.length; ++i){
+					fault_pp_3_5.push({
+						value:fault_pp_3_5_JSON[botton7_idx2name[i]],
+						name:botton7_idx2name[i]
+					})
+				}
+
+				myChart13.setOption({
+                    series: [{
+                        data: fault_pp_3_5
+                    }]
+				});
+				// console.log(curScore)
+
+				// option7.series[0].data[1].value = curScore
+
+				// myChart7.setOption(option7)
+            }
+            
+        });
+	}
+
+
 	// 右上角数字
 	var nums = 10231;
 	setInterval(function(){
 		nums += 1;
 		document.getElementById("salenumber").innerHTML=nums;
-		console.log(""+nums);
+		// console.log(""+nums);
 	}, 2000)
 
 

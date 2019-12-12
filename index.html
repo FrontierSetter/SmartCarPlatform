@@ -35,6 +35,7 @@
 <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/dropdown.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/components/dropdown.js"></script>
 <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/menu.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/button.css" rel="stylesheet">
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
 
 <!-- 词云 -->
@@ -69,11 +70,11 @@
 			<div class="visual_box" id="brand" style="height: 20%;">
 				<div class="mainContent" id="left1" style="height: 100%; width: 100%; float: left;">
 					<span>
-						当前车型/品牌：<a href="javascript:void(0)" onclick="gotoCarSelectionPage()">迈腾</a>
+						当前车型/品牌：<a href="javascript:void(0)" onclick="gotoModelSelectionPage()" id="modelshow">迈腾</a>/<a href="javascript:void(0)" onclick="gotoBrandSelectionPage()" id="brandshow">大众</a>
 					</span>	
 				</div>
 
-				<div id="page1" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+				<div id="pageBrand" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
 					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
 							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
 								<i class="angle up icon"></i>
@@ -81,115 +82,242 @@
 							</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui active fluid inverted blue button">迈腾</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('日产')">日产</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型2</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('大众')">大众</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型3</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('丰田')">丰田</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型4</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('本田')">本田</button>
 					</div>
 
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型5</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('吉利汽车')">吉利汽车</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型6</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('别克')">别克</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型7</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('奥迪')">奥迪</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型8</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('雪佛兰')">雪佛兰</button>
 					</div>
 					
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型9</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('奔驰')">奔驰</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型10</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('现代')">现代</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型11</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('宝马')">宝马</button>
 					</div>
 					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型12</button>
+							<button class="ui fluid inverted blue button" onclick="setBrand('马自达')">马自达</button>
 					</div>
 
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型13</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型14</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型15</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型16</button>
-					</div>
-
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型17</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型18</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型19</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型20</button>
-					</div>
-
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-						<button class="ui fluid inverted blue button">车型21</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型22</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型23</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型24</button>
-					</div>
-
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型25</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型26</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型27</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型28</button>
-					</div>
-
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型29</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui fluid inverted blue button">车型30</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui disabled fluid inverted blue button">车型31</button>
-					</div>
-					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
-							<button class="ui disabled fluid inverted blue button">车型32</button>
-					</div>
-					<!-- <div style="height: 33%; width: 25%; float: left;  text-align:center">
-							<button class="ui inverted teal button" style="margin-left:auto;margin-right:auto;">
-								
-								<i class="angle down icon"></i>下一页
-							</button>
-					</div> -->
 				</div>
+
+				<div id="pageModel日产" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('轩逸')">轩逸</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel大众" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('朗逸')">朗逸</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('宝来')">宝来</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('速腾')">速腾</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('帕萨特')">帕萨特</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('桑塔纳')">桑塔纳</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('迈腾')">迈腾</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('高尔夫')">高尔夫</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel丰田" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('卡罗拉')">卡罗拉</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('雷凌')">雷凌</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('凯美瑞')">凯美瑞</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel本田" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('思域')">思域</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('雅阁')">雅阁</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('凌派')">凌派</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel吉利汽车" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('新帝豪')">新帝豪</button>
+					</div>
+				</div>
+
+				<div id="pageModel别克" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('英朗')">英朗</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('君威')">君威</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('威朗')">威朗</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel奥迪" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('奥迪A6L')">奥迪A6L</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('奥迪A4L')">奥迪A4L</button>
+					</div>
+
+				</div>
+
+				<div id="pageModel雪佛兰" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('科鲁泽')">科鲁泽</button>
+					</div>
+				</div>
+
+				<div id="pageModel奔驰" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('奔驰E级')">奔驰E级</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('奔驰C级')">奔驰C级</button>
+					</div>
+				</div>
+
+				<div id="pageModel现代" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('领动')">领动</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('悦动')">悦动</button>
+					</div>
+				</div>
+
+				<div id="pageModel宝马" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('宝马5系')">宝马5系</button>
+					</div>
+				</div>
+
+				
+				<div id="pageModel马自达" style="overflow: auto; height: 100%; width: 100%; float: left; display: none">
+					<div style="height: 33%; width: 100%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted teal button" onclick="gotoLeft1()">
+								<i class="angle up icon"></i>
+								返回
+							</button>
+					</div>
+					<div style="height: 33%; width: 25%; float: left; text-align:center; padding-left: 1%; padding-right: 1%;">
+							<button class="ui fluid inverted blue button" onclick="setModel('马自达3 昂克赛拉')">昂克赛拉</button>
+					</div>
+				</div>
+				
 			</div>
 			<div class="visual_box" style="height:40%">
 				<div class="visual_title">
@@ -518,20 +646,65 @@
 		})
 
 	// 左上角下拉菜单
-	function gotoCarSelectionPage(){
-		console.log('clicked');
-		// document.getElementById("brand").style.top="-100px";
+
+	var curBrand = "大众"
+	var curModel = "迈腾"
+	var brandList = ["日产", "大众", "丰田", "本田", "吉利汽车", "别克", "奥迪", "大众", "雪佛兰", "奔驰", "现代", "宝马", "马自达"]
+	var defaultModel = {
+		"日产": "轩逸", 
+		"大众": "朗逸", 
+		"丰田": "卡罗拉", 
+		"本田": "思域", 
+		"吉利汽车": "新帝豪",
+		"别克": "君威",
+		"奥迪": "奥迪A4L",
+		"大众": "速腾",
+		"雪佛兰": "科鲁泽",
+		"奔驰": "奔驰C级",
+		"现代": "领动",
+		"宝马": "宝马5系",
+		"马自达": "马自达3 昂克赛拉"
+	}
+
+	function allPageHide(){
 		document.getElementById("left1").style.display="none";
-		document.getElementById("page1").style.display="";
-		// document.getElementById("left1").animate({display:"none"});
-		// document.getElementById("page1").animate({display:""});
-		
+		document.getElementById("pageBrand").style.display="none";
+		for(var i = 0; i < brandList.length; ++i){
+			if(document.getElementById("pageModel"+brandList[i]) == null) continue;
+			document.getElementById("pageModel"+brandList[i]).style.display="none";
+		}
+
+	}
+
+	function gotoModelSelectionPage(){
+		allPageHide()
+		console.log("curBrand: "+curBrand)
+		document.getElementById("pageModel"+curBrand).style.display="";
+	}
+
+	function gotoBrandSelectionPage(){
+		allPageHide()
+		document.getElementById("pageBrand").style.display="";
+	}
+
+	function setBrand(brand){
+		curBrand = brand
+		console.log("curBrand set to: "+curBrand)
+		curModel = defaultModel[curBrand]
+		gotoModelSelectionPage()
+	}
+
+	function setModel(model){
+		curModel = model
+		console.log("curBrand: "+curBrand+"curModel"+curModel)
+		gotoLeft1()
 	}
 
 	function gotoLeft1(){
-		console.log('clicked2');
-		// document.getElementById("brand").style.top="-100px";
-		document.getElementById("page1").style.display="none";
+		allPageHide()
+		document.getElementById("modelshow").innerHTML=curModel
+		document.getElementById("brandshow").innerHTML=curBrand
+
 		document.getElementById("left1").style.display="";
 		
 	}

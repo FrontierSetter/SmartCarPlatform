@@ -717,6 +717,31 @@
 		queryRadar();
 		queryFault();
 		queryImpression();
+		querySales();
+		querySalesHistory();
+	}
+
+	function querySalesHistory(){
+
+	}
+
+	function _do_querySalesHistory(year, month){
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/ModelRating/', //请求的url
+            type: 'get', //请求的方式
+            data: 'model='+curModel+'&year='+year+'&month='+month,
+            error: function (data) {
+                console.log('queryRadar请求失败');
+            },
+            success: function (data) {
+				if(data != undefined || data.length == 0){
+					return;
+				}else{
+
+				}
+            }
+            
+        });
 	}
 
 	var radar_idx2name = ["appearance","interior","space","configure","power","operation","oil_consumption","comfort"]
@@ -796,6 +821,21 @@
         });
 	}
 
+	function querySales(){
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/sales', //请求的url
+            type: 'get', //请求的方式
+            data: 'model='+curModel+'&year=2019'+'&month=10',
+            error: function (data) {
+                console.log('querySales请求失败');
+            },
+            success: function (data) {
+				document.getElementById("salenumber").innerHTML = data[0]['salesSum'];
+            }
+            
+        });
+	}
+
 	function clearImpression(){
 		var div = document.getElementById('bottom5');
 		while(div.hasChildNodes()){
@@ -833,8 +873,8 @@
                 console.log('queryImpression请求失败');
             },
             success: function (data) {
-				console.log(data['impression']);
-				var impressionArr = (data['impression']).split(' ');
+				console.log('test');
+				var impressionArr = (data[0]['impression']).split(' ');
 				var elementList = '';
 				for(var i = 0; i < impressionArr.length; ++i){
 					var cur = impressionArr[i].replace(/^\s+|\s+$/g,"");
@@ -849,10 +889,9 @@
 
 
 	// 右上角数字
-	var nums = 10231;
 	setInterval(function(){
-		nums += 1;
-		document.getElementById("salenumber").innerHTML=nums;
+		var nums = parseInt(document.getElementById("salenumber").innerHTML, 10) + 1;
+		document.getElementById("salenumber").innerHTML = nums;
 		// console.log(""+nums);
 	}, 2000)
 

@@ -664,7 +664,7 @@ option13 = {
     color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#92CEFF", "#6084E0"],
     tooltip: {
         trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
+        formatter: "{b}: {c} ({d}%)"
     },
     legend: {
         type: 'scroll',

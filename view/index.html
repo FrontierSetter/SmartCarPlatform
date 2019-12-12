@@ -528,13 +528,15 @@
 					
 				</div>
 			</div>
-			<div class="visual_smallBox">
+			<div class="visual_smallBox" style="width: 28.4%;">
 				<div class="visual_title">
-					<span>车型正面高频词汇</span>
+					<span>车型高频词汇</span>
 					<img src="images/ksh33.png">
 				</div>
-				<div id="bottom5" style="width:100%;height: 80%">
-					<div style="height: 20%; width: 100%; float: left;"></div>
+				<div id="bottom5" style="width:100%;height: 80%;">
+				<!-- <div id="bottom5" style="width:100%;height: 80%; text-align:justify; text-justify:inter-ideograph;"> -->
+
+					<!-- <div style="height: 20%; width: 100%; float: left;"></div>
 					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
 							<button class="ui fluid inverted violet button">宽&#12288敞</button>
 					</div>
@@ -561,13 +563,13 @@
 					</div>
 					<div style="height: 25%; width: 32%; float: left; padding-left: 1px; padding-right: 1px;">
 							<button class="ui fluid inverted blue button">售后好</button>
-					</div>
+					</div> -->
 
 				
 					
 				</div>
 			</div>
-			<div class="visual_smallBox">
+			<!-- <div class="visual_smallBox">
 				<div class="visual_title">
 					<span>车型负面高频词汇</span>
 					<img src="images/ksh33.png">
@@ -605,7 +607,7 @@
 			
 					
 				</div>
-			</div>
+			</div> -->
 			<div class="visual_smallBox">
 				<div class="visual_title">
 					<span>3-5年百车故障分布</span>
@@ -649,6 +651,8 @@
 
 	var curBrand = "奥迪"
 	var curModel = "奥迪A4L"
+	document.getElementById("modelshow").innerHTML=curModel;
+	document.getElementById("brandshow").innerHTML=curBrand;
 	var brandList = ["日产", "大众", "丰田", "本田", "吉利汽车", "别克", "奥迪", "大众", "雪佛兰", "奔驰", "现代", "宝马", "马自达"]
 	var defaultModel = {
 		"日产": "轩逸", 
@@ -688,32 +692,31 @@
 	}
 
 	function setBrand(brand){
-		curBrand = brand
-		console.log("curBrand set to: "+curBrand)
-		curModel = defaultModel[curBrand]
-		gotoModelSelectionPage()
+		curBrand = brand;
+		console.log("curBrand set to: "+curBrand);
+		curModel = defaultModel[curBrand];
+		gotoModelSelectionPage();
 	}
 
 	function setModel(model){
-		curModel = model
-		console.log("curBrand: "+curBrand+"curModel"+curModel)
-		queryModel()
+		curModel = model;
+		console.log("curBrand: "+curBrand+"curModel"+curModel);
+		queryModel();
+		document.getElementById("modelshow").innerHTML=curModel;
+		document.getElementById("brandshow").innerHTML=curBrand;
 		gotoLeft1()
 	}
 
 	function gotoLeft1(){
-		allPageHide()
-		document.getElementById("modelshow").innerHTML=curModel
-		document.getElementById("brandshow").innerHTML=curBrand
-
-		document.getElementById("left1").style.display="";
-		
+		allPageHide();
+		document.getElementById("left1").style.display="";	
 	}
 
 	function queryModel(){
 		// 请求雷达图
-		queryRadar()
-		queryFault()
+		queryRadar();
+		queryFault();
+		queryImpression();
 	}
 
 	var radar_idx2name = ["appearance","interior","space","configure","power","operation","oil_consumption","comfort"]
@@ -775,7 +778,7 @@
 					fault_pp_3_5.push({
 						value:fault_pp_3_5_JSON[botton7_idx2name[i]],
 						name:botton7_idx2name[i]
-					})
+					});
 				}
 
 				myChart13.setOption({
@@ -788,6 +791,57 @@
 				// option7.series[0].data[1].value = curScore
 
 				// myChart7.setOption(option7)
+            }
+            
+        });
+	}
+
+	function clearImpression(){
+		var div = document.getElementById('bottom5');
+		while(div.hasChildNodes()){
+			div.removeChild(div.firstChild);
+		}
+	}
+
+	var colorName = ['violet', 'teal', 'blue'];
+	var idx = 0;
+
+	function createImpression(rawText){
+		// <button class="ui inverted violet button" style="margin: 1%;">车身稳定控制不错</button>
+		var result = '<button class="ui inverted ';
+		result += colorName[idx];
+
+		idx += 1;
+		idx %= colorName.length;
+
+		result = result + ' button" style="margin: 1%;">' + rawText + '</button> \n';
+		
+		return result;
+	}
+
+	function setImpression(elementList){
+		document.getElementById('bottom5').innerHTML = elementList;
+	}
+
+	function queryImpression(){
+		clearImpression();
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/impression', //请求的url
+            type: 'get', //请求的方式
+            data: 'model='+curModel,
+            error: function (data) {
+                console.log('queryImpression请求失败');
+            },
+            success: function (data) {
+				console.log(data['impression']);
+				var impressionArr = (data['impression']).split(' ');
+				var elementList = '';
+				for(var i = 0; i < impressionArr.length; ++i){
+					var cur = impressionArr[i].replace(/^\s+|\s+$/g,"");
+					if(cur.length == 0) continue;
+					elementList += createImpression(cur);
+				}
+				setImpression(elementList);
             }
             
         });

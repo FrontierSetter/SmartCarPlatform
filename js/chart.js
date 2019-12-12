@@ -331,12 +331,14 @@ option7 = {
            }
         },
         indicator: [
-           { name: '销售', max: 6500},
-           { name: '管理', max: 16000},
-           { name: '技术', max: 30000},
-           { name: '客服', max: 38000},
-           { name: '研发', max: 52000},
-           { name: '市场', max: 25000}
+           { name: '外型', max: 5},
+           { name: '内饰', max: 5},
+           { name: '空间', max: 5},
+           { name: '配置', max: 5},
+           { name: '动力', max: 5},
+           { name: '操作', max: 5},
+           { name: '油耗', max: 5},
+           { name: '舒适', max: 5}
         ]
     },
     series: [{
@@ -346,7 +348,7 @@ option7 = {
         // areaStyle: {normal: {}},
         data : [
             {
-                value : [5000, 14000, 28000, 31000, 42000, 21000],
+                value : [4.549, 4.298, 4.377, 4.316, 4.256, 4.360, 4.255, 4.227],
                 name : '均值',
                 lineStyle: {
                     normal: {
@@ -355,7 +357,7 @@ option7 = {
                 }
             },
             {
-                value : [4300, 10000, 28000, 35000, 50000, 19000],
+                value : [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5],
                 name : '当前',
                 areaStyle: {
                     normal: {

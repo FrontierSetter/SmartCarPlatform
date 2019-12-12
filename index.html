@@ -317,7 +317,7 @@
 							<button class="ui fluid inverted blue button" onclick="setModel('马自达3 昂克赛拉')">昂克赛拉</button>
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="visual_box" style="height:40%">
 				<div class="visual_title">
@@ -697,6 +697,7 @@
 	function setModel(model){
 		curModel = model
 		console.log("curBrand: "+curBrand+"curModel"+curModel)
+		queryModel()
 		gotoLeft1()
 	}
 
@@ -707,6 +708,36 @@
 
 		document.getElementById("left1").style.display="";
 		
+	}
+
+	function queryModel(){
+		// 请求雷达图
+		queryRadar()
+	}
+
+	var radar_idx2name = ["appearance","interior","space","configure","power","operation","oil_consumption","comfort"]
+
+	function queryRadar(){
+		$.ajax({
+            url: 'http://202.120.60.31:4000/get/ModelRating/', //请求的url
+            type: 'get', //请求的方式
+            data: 'model='+curModel,
+            error: function (data) {
+                console.log('queryRadar请求失败');
+            },
+            success: function (data) {
+				var curScore = [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
+				for(var i = 0; i < 8; ++i){
+					curScore[i] = data[0][radar_idx2name[i]]
+				}
+				console.log(curScore)
+
+				option7.series[0].data[1].value = curScore
+
+				myChart7.setOption(option7)
+            }
+            
+        });
 	}
 
 
@@ -862,6 +893,8 @@
 		myChartHeatMap.resize();
 		myChartScatter.resize();
 	}
+
+	queryModel()
 	</script>
 </body>
 </html>

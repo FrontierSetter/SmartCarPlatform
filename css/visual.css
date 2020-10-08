@@ -17,7 +17,8 @@ html, body, form{overflow-y:auto;height:100%;}
 	}
 
 
-.ksh{height:100%;padding:15px;background:url(../images/data08.png) no-repeat #061537;background-size:cover;overflow:hidden;position:relative;z-index:-2;}
+.ksh{height:100%;padding:15px;background:url(../images/data08.png) no-repeat #061537;background-size:cover;overflow:hidden;position:relative;}
+/* .ksh{height:100%;padding:15px;background:url(../images/data08.png) no-repeat #061537;background-size:cover;overflow:hidden;position:relative;z-index:-2;} */
 
 /* 加载旋转动画 */
 #load{width:100%;height:100%;position:absolute;background:url(../images/data08.png) no-repeat #061537;background-size:cover;top:0;left:0;z-index:999}
